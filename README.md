@@ -28,7 +28,7 @@ SIDECAR_IMAGE_TAG: Docker image version for the Prometheus sidecar. The latest r
    <br />
 To find <DATA_DIR> : <br />
 kubectl describe statefulset -n <KUBE_NAMESPACE> | grep "--storage.tsdb.path=" <br />
-To find <DATA> : <br />
-kubectl describe statefulset -n <KUBE_NAMESPACE> | grep "<DATA> from" <br />
+To find \<DATA> : <br />
+kubectl describe statefulset -n <KUBE_NAMESPACE> | grep "\<DATA> from" <br />
    <br /> 
      <br />
