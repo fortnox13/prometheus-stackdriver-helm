@@ -1,5 +1,5 @@
 # prometheus-stackdriver-helm
-Terraform files to deploy prometheus + stackdriver sidecar using helm
+Terraform files to deploy prometheus + stackdriver sidecar using helm \n
 In yaml file:
     containers:
       - name: stackdriver-sidecar
