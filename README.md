@@ -14,7 +14,7 @@ In yaml file: <br />
           - name: stackdriver <br />
             containerPort: 9091 <br />
         volumeMounts: <br />
-          - name:    <DATA> <br />
+          - name:    \<DATA> <br />
             mountPath: <DATA_DIR> <br />
    <br />
 KUBE_NAMESPACE: Namespace to run the script against. <br />
