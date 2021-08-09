@@ -26,9 +26,9 @@ DATA_VOLUME: Name of the shared volume in the DATA_DIR that contains Prometheus'
 SIDECAR_IMAGE_TAG: Docker image version for the Prometheus sidecar. The latest release can be found in the Container registry. <br />
    <br />
    <br />
-To find <DATA_DIR> --prometheus.wal-directory=: <br />
+To find <DATA_DIR> : <br />
 kubectl describe statefulset -n <KUBE_NAMESPACE> | grep "--storage.tsdb.path=" <br />
-To find <DATA>: <br />
+To find <DATA> : <br />
 kubectl describe statefulset -n <KUBE_NAMESPACE> | grep "<DATA> from" <br />
    <br /> 
      <br />
