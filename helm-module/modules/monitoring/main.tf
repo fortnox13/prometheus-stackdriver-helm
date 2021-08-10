@@ -13,7 +13,8 @@ resource "helm_release" "prometheus" {
 
   values = [
     # The file with all values that should override the default values for the chart:
-    "${file("manifests/value-helm-prometheus.yaml")}"
+    "${file("${var.value_file}")}"
+    # "${file("./modules/monitoring/manifests/value-helm-prometheus.yaml")}"
   ]
 }
 
