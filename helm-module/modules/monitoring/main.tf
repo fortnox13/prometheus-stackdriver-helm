@@ -17,4 +17,8 @@ resource "helm_release" "prometheus" {
   ]
 }
 
+resource "google_monitoring_dashboard" "infrastructure" {
+project = var.project_id
+dashboard_json = "${var.template}" ?  templatefile("${var.dashboard}", { cluster_name = var.cluster_name }) : file(var.dashboard)
+}
 
