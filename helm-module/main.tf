@@ -9,9 +9,10 @@ module "helm-gke-1" {
   }
 
   namespace = "monitor"
-  
+
   template     = true
   cluster_name = "var.cluster_name"
-  dashboard = "./monitoring/dashboards/cluster-dashboard.json"
-  project_id = "helm-test-sidecar"
+  value_file   = "./modules/monitoring/manifests/value-helm-prometheus.yaml"
+  dashboard    = "./modules/monitoring/dashboards/cluster-dashboard.json"
+  project_id   = "helm-test-sidecar"
 }

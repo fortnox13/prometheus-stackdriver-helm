@@ -15,6 +15,11 @@ variable "dashboard"{
     default = ""
     description = "path to JSON file which describe monitoring dashboard"
 }
+variable "value_file"{
+    type = string
+    default = ""
+    description = "path to yaml file with values for prometheus helm chart"
+}
 
 
 variable "cluster_name" {
