@@ -22,7 +22,9 @@ resource "google_monitoring_dashboard" "infrastructure" {
 project = var.project_id
 dashboard_json = var.template_dashboard ?  templatefile("${var.dashboard}", { cluster_name = var.cluster_name }) : file(var.dashboard)
   lifecycle {
-    ignore_changes =      allter
+    ignore_changes =      all
   }
 }
+
+
 

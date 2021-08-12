@@ -323,7 +323,7 @@
       {
         "height": 4,
         "widget": {
-          "title": "external/prometheus/scrape_duration_seconds for cluster-3 [MEAN]",
+          "title": "scrape_duration_seconds for ${cluster_name} [MEAN]",
           "xyChart": {
             "chartOptions": {
               "mode": "COLOR"
@@ -366,7 +366,7 @@
       {
         "height": 4,
         "widget": {
-          "title": "external/prometheus/go_memstats_gc_sys_bytes for cluster-3 [MEAN]",
+          "title": "go_memstats_gc_sys_bytes for ${cluster_name} [MEAN]",
           "xyChart": {
             "chartOptions": {
               "mode": "COLOR"
@@ -409,7 +409,7 @@
       {
         "height": 4,
         "widget": {
-          "title": "external/prometheus/instance:node_memory_utilisation:ratio for cluster-3 [MEAN]",
+          "title": "node_memory_utilisation:ratio for ${cluster_name} [MEAN]",
           "xyChart": {
             "chartOptions": {
               "mode": "COLOR"
@@ -452,7 +452,7 @@
       {
         "height": 4,
         "widget": {
-          "title": "external/prometheus/kube_daemonset_status_current_number_scheduled (filtered)...",
+          "title": "kube_daemonset_status_current_number_scheduled (filtered)...",
           "xyChart": {
             "chartOptions": {
               "mode": "COLOR"
@@ -516,7 +516,7 @@
       {
         "height": 4,
         "widget": {
-          "title": "external/prometheus/kube_deployment_spec_paused for cluster-3 [MEAN]",
+          "title": "kube_deployment_spec_paused for ${cluster_name} [MEAN]",
           "xyChart": {
             "chartOptions": {
               "mode": "COLOR"
@@ -559,7 +559,7 @@
       {
         "height": 4,
         "widget": {
-          "title": "external/prometheus/kube_deployment_spec_replicas for cluster-3 [MEAN]",
+          "title": "kube_deployment_spec_replicas for ${cluster_name} [MEAN]",
           "xyChart": {
             "chartOptions": {
               "mode": "COLOR"
@@ -602,7 +602,7 @@
       {
         "height": 4,
         "widget": {
-          "title": "external/prometheus/kube_deployment_status_condition for cluster-3 [MEAN]",
+          "title": "kube_deployment_status_condition for ${cluster_name} [MEAN]",
           "xyChart": {
             "chartOptions": {
               "mode": "COLOR"
@@ -645,7 +645,7 @@
       {
         "height": 4,
         "widget": {
-          "title": "external/prometheus/node_disk_io_now for cluster-3 [MEAN]",
+          "title": "node_disk_io_now for ${cluster_name} [MEAN]",
           "xyChart": {
             "chartOptions": {
               "mode": "COLOR"

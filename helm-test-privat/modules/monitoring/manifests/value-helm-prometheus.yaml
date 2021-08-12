@@ -19,7 +19,7 @@ prometheus:
     create: true
     name: prometheus
     annotations: 
-      iam.gke.io/gcp-service-account: prometheus-service-account@tls-test-322614.iam.gserviceaccount.com
+      iam.gke.io/gcp-service-account: prometheus@tls-test-322614.iam.gserviceaccount.com
       name: prometheus
       namespace: ${namespace}
   prometheusSpec:
@@ -32,6 +32,14 @@ prometheus:
           - --prometheus.wal-directory=/prometheus/wal
           - --stackdriver.kubernetes.location=${cluster_region}	
           - --stackdriver.kubernetes.cluster-name=${cluster_name}
+          - --include={__name__=~"scrape_duration_seconds"}
+          - --include={__name__=~"go_memstats_gc_sys_bytes"}
+          - --include={__name__=~"instance:node_memory_utilisation:ratio"}
+          - --include={__name__=~"kube_daemonset_status_current_number_scheduled"}
+          - --include={__name__=~"kube_deployment_spec_paused"}
+          - --include={__name__=~"kube_deployment_spec_replicas"}
+          - --include={__name__=~"kube_deployment_status_condition"}
+          - --include={__name__=~"node_disk_io_now"}
         ports:
           - name: stackdriver
             containerPort: 9091
