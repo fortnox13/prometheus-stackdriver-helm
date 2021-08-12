@@ -1,0 +1,41 @@
+grafana:
+  enabled: false
+defaultRules:
+  rules:
+    alertmanager: false
+    etcd: false
+    kubePrometheusNodeAlerting: false
+    kubeScheduler: false
+alertmanager:
+  enabled: false
+kubeControllerManager:
+  enabled: false
+kubeEtcd:
+  enabled: false
+kubeScheduler:
+  enabled: false
+prometheus:
+  serviceAccount:
+    create: true
+    name: prometheus
+    annotations: 
+      iam.gke.io/gcp-service-account: prometheus-service-account@tls-test-322614.iam.gserviceaccount.com
+      name: prometheus
+      namespace: ${namespace}
+  prometheusSpec:
+    containers:
+      - name: stackdriver-sidecar
+        image: gcr.io/stackdriver-prometheus/stackdriver-prometheus-sidecar:0.9.0
+        imagePullPolicy: Always
+        args:
+          - --stackdriver.project-id=${project_id}
+          - --prometheus.wal-directory=/prometheus/wal
+          - --stackdriver.kubernetes.location=${cluster_region}	
+          - --stackdriver.kubernetes.cluster-name=${cluster_name}
+        ports:
+          - name: stackdriver
+            containerPort: 9091
+        volumeMounts:
+          - name:    prometheus-prometheus-kube-prometheus-prometheus-db
+            mountPath: /prometheus
+  
