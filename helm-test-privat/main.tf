@@ -52,3 +52,13 @@ module "wi-google-sa" {
   roles = ["roles/monitoring.metricWriter"]
 #   depends_on = [module.ksa]
 }
+
+module "logging-bucket" {
+  source  = "terraform-google-modules/gcloud/google"
+  version = "~> 2.0"
+#  skip_download = true
+  platform              = "linux"
+  additional_components = ["kubectl", "beta"]
+
+  create_cmd_body  = "logging buckets update _Default --location=global --retention-days=30"
+}
